@@ -344,29 +344,4 @@ int aesDecrypt(const uint8_t* key, uint32_t keyLen, const uint8_t* ct, uint8_t* 
     return 0;
 }
 
-int main()
-{
-    const uint8_t key2[] = "1111111111111111";
-    const uint8_t* data = (uint8_t*)"abcdefghijklmnopqrstuvwxyz111111";
-    uint8_t ct2[32] = { 0 };
-    uint8_t plain2[32] = { 0 };
-    aesEncrypt(key2, 16, data, ct2, 32);
-    printf("plaintext:\n%s\n", data);
-    if (aesEncrypt(key2, 16, data, ct2, 32) == 0)
-    {
-        printf("after encrypt:\n");
-        for (int i = 0; i < 32; ++i)
-        {
-            printf("%02x ", ct2[i]);
-        }
-        printf("\n");
-    }
-    aesDecrypt(key2, 16, ct2, plain2, 32);
-    printf("after decrypt \n");
-    for (int i = 0; i < 32; ++i)
-    {
-        printf("%c ", plain2[i]);
-    }
-    return 0;
 
-}
