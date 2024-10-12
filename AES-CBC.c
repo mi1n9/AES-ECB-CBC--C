@@ -362,25 +362,4 @@ int aesDecryptCBC(const uint8_t* key, uint32_t keyLen, const uint8_t* iv,
 
     return 0;  
 }
-int main() {
-    const uint8_t key[] = "1111111111111111";
-    const uint8_t iv[] = "1234567890123456";
-    const uint8_t* data = (uint8_t*)"abcdefghijklmnopqrstuvwxyz111111";
-    uint8_t ct[32] = { 0 };
-    uint8_t pt[32] = { 0 };
-    if (aesEncryptCBC(key, 16, iv, data, ct, 32) == 0) {
-        printf("plaintext:\n%s\n", data);
-        printf("after encrypt:\n");
-        for (int i = 0; i < 32; ++i)
-        {
-            printf("%02x ", ct[i]);
-        }
-        printf("\n");
-    }
-    else
-    {
-        printf("Encryption failed.\n");
-        return -1;
-    }
 
-}
