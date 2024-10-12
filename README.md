@@ -1,2 +1,2 @@
-# AES-C-ECB-CBC-
-C语言实现的AES-128ECB和CBC模式加密
+# AES-C-ECB-CBC
+AES ECB and CBC encryption implemented in C language (AES-128)
